@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.FlowPane?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.colbymeline.internetmonitor.Controller">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <bottom>
+        <FlowPane BorderPane.alignment="CENTER" hgap="10" vgap="10">
+            <Button fx:id="resetButton" text="Reset Connection" onAction="#onResetButtonClick"/>
+            <Button fx:id="pingButton" text="Check Ping" onAction="#onPingButtonClick" />
+            <VBox spacing="5">
+                <Label text="Check my connection:"/>
+                <ComboBox fx:id="Period" value="Not at all" onAction="#onPeriodDropdownClick">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Not at all"/>
+                            <String fx:value="Every 5 minutes"/>
+                            <String fx:value="Every 10 minutes"/>
+                            <String fx:value="Every 20 minutes"/>
+                            <String fx:value="Every 60 minutes"/>
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+            </VBox>
+        </FlowPane>
+    </bottom>
+</BorderPane>
